@@ -17,14 +17,13 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: url('https://source.unsplash.com/collection/1408037/1600x900') no-repeat center / cover;
+    background: linear-gradient(0deg, rgba(15, 15, 15, 0.8), rgba(22, 0, 13, 0.3)), url('https://source.unsplash.com/collection/1408037/1600x900') no-repeat center / cover;
 }
 main {
     flex: 1 0 auto;
     width: 100%;
 }
 h1 {
-    color: black;
     font-weight: 100;
 }
 .search, .container {
@@ -65,7 +64,7 @@ h1 {
     border-radius: 3.125rem;
     background-color: black;
     color: #fff;
-    padding: 0.4rem 1rem;
+    padding: 0.6rem 1rem;
 }
 .btn:hover {
     background-color: black;
