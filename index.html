@@ -4,15 +4,35 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Weather App || PWA</title>
-        <meta name="description" content="">
+        <meta name="description" content="A progressive weather web app">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <header></header>
-        <main></main>
-        <footer>
-            <small>&copy;<span id="copyright"></span>|| Kingsley Umujeyan</small>
+        <header>
+            <h1>Weather App</h1>
+        </header>
+        <main>
+            <section class="search">
+                <div class="container">
+                    <form class="form">
+                        <div class="searchCity">
+                            <label for="searchCity"></label>
+                            <input type="text" class="searchInput" id="searchCity" placeholder="Search City" autofocus/>
+                        </div>
+                        <span class="msg"></span>
+                        <div class="submit">
+                            <button type="submit" class="btn">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="results">
+
+            </section>
+        </main>
+        <footer class="footer">
+            <small>&copy;<span id="copyright"></span> || Kingsley Umujeyan</small>
         </footer>
         <script src="./script.js" async defer></script>
     </body>
