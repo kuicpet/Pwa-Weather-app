@@ -47,8 +47,7 @@ form.addEventListener("submit",(e) => {
     .then(response => response.json())
     .then(data => {
         const {main, name, sys, weather, wind } = data;
-        const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/
-        ${weather[0]["icon"]}.svg`;
+        const icon = `http://openweathermap.org/img/w/${weather[0]["icon"]}.png`;
         console.log(data);
         const li = document.createElement("li");
         li.classList.add("city");
