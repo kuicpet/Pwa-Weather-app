@@ -14,9 +14,33 @@ form.addEventListener("submit",(e) => {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        const weather = data;
-        console.log(weather);
+        const {main, name, rain, sys, weather, wind } = data;
+        console.log(data);
+        const li = document.createElement("li");
+        li.classList.add("city");
+        const markup = `
+            <h2 class="city-name" data-name="${name},${sys.country}">
+                <span>${name}</span>,
+                <span>${sys.country}</span>
+            </h2>
+            <div class="city-temp">
+                <p>Temp: ${Math.round(main.temp)}<sup>°C</sup></p>
+                <p>Feels like: ${main.feels_like}<sup>°C</sup></p>
+                <p>Temp Min: ${main.temp_min}<sup>°C</sup></p>
+            </div>
+            <div class="city-rain">
+                <p>Rain: ${rain["1h"]}</p>
+            </div>
+        `;
+        li.innerHTML = markup;
+        list.appendChild(li);
     })
+    .catch(() => {
+        msg.textContent = "Please search a valid city name!";
+    });
+    msg.textContent = "";
+    form.reset();
+    input.focus();
    
 });
 
