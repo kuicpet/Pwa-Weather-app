@@ -58,11 +58,10 @@ form.addEventListener("submit",(e) => {
                 <span>${sys.country}</span>
             </h2>
             <div class="city-temp">
-                <p>Temp: ${Math.round(main.temp)}<sup>°C</sup></p>
-                <p>Feels like: ${main.feels_like}<sup>°C</sup></p>
-                <p>Temp Min: ${main.temp_min}<sup>°C</sup></p>
+                <p class="temp">${Math.round(main.temp)}<sup>°C</sup></p>
+                <span>Feels like: ${main.feels_like}<sup>°C</sup></span>
             </div>
-            <figure>
+            <figure class="fig">
                 <img class="city-icon" 
                     src=${icon}
                     alt=${weather[0]["description"]}
@@ -71,7 +70,7 @@ form.addEventListener("submit",(e) => {
                     ${weather[0]["description"]}
                 </figcaption>
             </figure>
-            <div>
+            <div class="wind">
                 <p>Wind Speed: ${wind.speed}m/s</p>
             </div>
         `;
