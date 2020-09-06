@@ -8,13 +8,47 @@ const apikey = "46797972ff33fdd2b5de17ae270c170f";
 // Search
 form.addEventListener("submit",(e) => {
     e.preventDefault();
-    let cityName = input.value;
+    let inputVal = input.value;
+
     // Checking for Duplication
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apikey}&units=metric`;
+    //Checkif there is already a City
+    const listItems = list.querySelectorAll('.results .city');
+    const listItemsArray = Array.from(listItems);
+    if(listItemsArray.length >0){
+        const filteredArray = listItemsArray.filter((el) => {
+            let content = "";
+            if(inputVal.includes(",") ){
+                if(inputVal.split(",")[1].length > 2){
+                    inputVal = inputVal.split(",")[0];
+                    content = el.querySelector('.city-name span')
+                    .textContent.toLowerCase();
+                } else {
+                    content = el.querySelector('.city-name').dataset.name.toLowerCase();
+                }
+            } else {
+                content = el.querySelector('.city-name span').textContent.toLowerCase();
+            }
+            return content == inputVal.toLowerCase();
+        });
+        if(filteredArray.length > 0){
+            msg.textContent = `You already know the weather for ${filteredArray[0].querySelector(".city-name span").textContent}...
+            Otherwise be more specific by adding a country code as well.`;
+            form.reset();
+            input.focus;
+            return; 
+        }
+    }
+
+
+
+    // Fetching data
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apikey}&units=metric`;
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        const {main, name, rain, sys, weather, wind } = data;
+        const {main, name, sys, weather, wind } = data;
+        const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/
+        ${weather[0]["icon"]}.svg`;
         console.log(data);
         const li = document.createElement("li");
         li.classList.add("city");
@@ -28,8 +62,17 @@ form.addEventListener("submit",(e) => {
                 <p>Feels like: ${main.feels_like}<sup>°C</sup></p>
                 <p>Temp Min: ${main.temp_min}<sup>°C</sup></p>
             </div>
-            <div class="city-rain">
-                <p>Rain: ${rain["1h"]}</p>
+            <figure>
+                <img class="city-icon" 
+                    src=${icon}
+                    alt=${weather[0]["description"]}
+                    />
+                <figcaption>
+                    ${weather[0]["description"]}
+                </figcaption>
+            </figure>
+            <div>
+                <p>Wind Speed: ${wind.speed}m/s</p>
             </div>
         `;
         li.innerHTML = markup;
