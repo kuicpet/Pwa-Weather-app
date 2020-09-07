@@ -4,7 +4,21 @@ const input = document.querySelector(".searchInput");
 const list = document.querySelector(".cities");
 const msg = document.querySelector(".msg");
 const loader = document.querySelector("#loader");
+const clock = document.querySelector("#clock");
 const apikey = config.API_KEY;
+
+
+// Clock
+function showTime() {
+    let time = new Date();
+    clock.textContent = time.toLocaleString("en-Us",{
+        hour : "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+    });
+};
+setInterval(showTime, 1000);
 
 
 // Loader
