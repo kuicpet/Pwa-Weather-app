@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="A Simple progressive weather web app">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#2F3BA2" />
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Weather App</h1> 
+        </header>
+       <main>
+           <div id="clock"></div>
+           <section class="offline">
+             <div class="container">
+                <div class="card">
+                    <h1>Oops, seems you are Offline,this app needs internet connection</h1>
+                </div>
+             </div>
+           </section>
+       </main>
+       <footer class="footer">
+            <small>&copy;<span id="copyright"></span> | Kingsley Umujeyan</small>
+       </footer>
+       <script src="/clock.js"></script>
+        <script src="/serviceWorker.js" async defer></script>
+    </body>
+</html>
