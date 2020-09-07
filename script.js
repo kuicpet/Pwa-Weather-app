@@ -12,12 +12,15 @@ const apikey = config.API_KEY;
 function showTime() {
     let time = new Date();
     clock.textContent = time.toLocaleString("en-Us",{
+        month: "long",
+        day: "numeric",
         hour : "numeric",
         minute: "numeric",
         second: "numeric",
         hour12: true
     });
 };
+showTime();
 setInterval(showTime, 1000);
 
 
