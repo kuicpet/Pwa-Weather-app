@@ -3,7 +3,7 @@ const form = document.querySelector(".form");
 const input = document.querySelector(".searchInput");
 const list = document.querySelector(".cities");
 const msg = document.querySelector(".msg");
-const apikey = "46797972ff33fdd2b5de17ae270c170f";
+const apikey = config.apiKey;
 
 // Search
 form.addEventListener("submit",(e) => {
@@ -11,7 +11,6 @@ form.addEventListener("submit",(e) => {
     let inputVal = input.value;
 
     // Checking for Duplication
-    //Checkif there is already a City
     const listItems = list.querySelectorAll('.results .city');
     const listItemsArray = Array.from(listItems);
     if(listItemsArray.length >0){
