@@ -26,6 +26,10 @@ main {
 h1 {
     font-weight: 100;
 }
+.msg{
+    text-align: center;
+    padding: 0.2rem;
+}
 .search, .container {
     display: flex;
     flex-direction: column;
@@ -37,6 +41,8 @@ h1 {
 }
 .form{
     margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 .searchCity {
     width: 100%;
@@ -95,7 +101,28 @@ h1 {
     font-size: 4rem;
     margin: 0;
 }
+/**Sinner*/
+#loader {
+    visibility: hidden;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #fff;
+    border-top: 3px solid #000;
+    border-radius: 100%;
+    margin: auto;
+    animation: spin 1s infinite linear;
+}
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+#loader.show {
+    visibility: visible;
+}
 #copyright {
     padding: 0.1rem;
 }

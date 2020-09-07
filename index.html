@@ -20,15 +20,17 @@
                             <label for="searchCity"></label>
                             <input type="text" class="searchInput" id="searchCity" placeholder="Search City" autofocus/>
                         </div>
-                        <span class="msg"></span>
+                        <div class="msg"></div>
                         <div class="submit">
-                            <button type="submit" class="btn">Search</button>
+                            <button type="submit" class="btn" >Search</button>
                         </div>
                     </form>
+                    <div id="loader"></div>
                 </div>
             </section>
             <section class="results">
                 <div class="container">
+                   
                     <ul class="cities"></ul>
                 </div>
             </section>
@@ -36,7 +38,8 @@
         <footer class="footer">
             <small>&copy;<span id="copyright"></span> | Kingsley Umujeyan</small>
         </footer>
-        <script src="script.js" async defer></script>
         <script src="config.js"></script>
+        <script src="script.js"></script>
+        
     </body>
 </html>

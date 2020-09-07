@@ -3,8 +3,17 @@ const form = document.querySelector(".form");
 const input = document.querySelector(".searchInput");
 const list = document.querySelector(".cities");
 const msg = document.querySelector(".msg");
-const apikey = config.apiKey;
+const loader = document.querySelector("#loader");
+const apikey = config.API_KEY;
 
+
+// Loader
+function showLoader() {
+    loader.className = "show";
+    setTimeout(() => {
+        loader.className = loader.className.replace("show", "");
+    }, 1500);
+}
 // Search
 form.addEventListener("submit",(e) => {
     e.preventDefault();
@@ -38,7 +47,8 @@ form.addEventListener("submit",(e) => {
         }
     }
 
-
+    // Loading animation
+    showLoader();
 
     // Fetching data
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apikey}&units=metric`;
