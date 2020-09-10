@@ -32,6 +32,7 @@ function showLoader() {
         loader.className = loader.className.replace("show", "");
     }, 1500);
 }
+
 // Search
 form.addEventListener("submit",(e) => {
     e.preventDefault();
@@ -68,7 +69,7 @@ form.addEventListener("submit",(e) => {
     // Getting data from cache
     if(!("caches" in window)) {
         return null;
-    }
+    } 
 
     // Loading animation
     showLoader();
@@ -79,6 +80,8 @@ form.addEventListener("submit",(e) => {
     .then(response => response.json())
     .then(data => {
         const {main, name, sys, weather, wind } = data;
+        // Saving to localstorage
+        localStorage.setItem("data", JSON.stringify(data));
         const icon = `http://openweathermap.org/img/w/${weather[0]["icon"]}.png`;
         //console.log(data);
         const li = document.createElement("li");
@@ -120,3 +123,4 @@ form.addEventListener("submit",(e) => {
 // Footer
 const year = document.createTextNode(new Date().getFullYear());
 copyright.appendChild(year);
+
