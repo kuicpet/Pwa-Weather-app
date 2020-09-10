@@ -47,6 +47,15 @@
         </footer>
         <script src="config.js"></script>
         <script src="script.js"></script>
-        <script src="serviceWorker.js"></script>
+        <script>
+            if("serviceWorker" in navigator){
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/serviceWorker.js")
+                    .then((reg) => {
+                        console.log("Service worker successfully registered!", reg);
+                    });
+                });
+            }
+        </script>
     </body>
 </html>

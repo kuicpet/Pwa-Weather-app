@@ -65,6 +65,11 @@ form.addEventListener("submit",(e) => {
         }
     }
 
+    // Getting data from cache
+    if(!("caches" in window)) {
+        return null;
+    }
+
     // Loading animation
     showLoader();
 
