@@ -29,6 +29,15 @@
             <small>&copy;<span id="copyright"></span> | Kingsley Umujeyan</small>
        </footer>
        <script src="/clock.js"></script>
-        <script src="/serviceWorker.js" async defer></script>
+       <script>
+        if("serviceWorker" in navigator){
+             window.addEventListener("load", () => {
+                 navigator.serviceWorker.register("/serviceWorker.js")
+                 .then((reg) => {
+                     console.log("Service worker successfully registered!", reg);
+                 });
+             });
+         }
+     </script>
     </body>
 </html>

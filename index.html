@@ -24,7 +24,7 @@
                 <div class="container">
                     <form class="form">
                         <div class="searchCity">
-                            <label for="searchCity">Search City Weather</label>
+                            <label for="searchCity">Search</label>
                             <input type="text" class="searchInput" id="searchCity" placeholder="Search City" autofocus/>
                         </div>
                         <div class="msg"></div>
@@ -53,7 +53,7 @@
         <script src="script.js"></script>
         <script src="/install.js"></script>
         <script>
-            if("serviceWorker" in navigator){
+           if("serviceWorker" in navigator){
                 window.addEventListener("load", () => {
                     navigator.serviceWorker.register("/serviceWorker.js")
                     .then((reg) => {

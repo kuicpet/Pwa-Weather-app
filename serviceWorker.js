@@ -1,3 +1,4 @@
+
 const CACHE_NAME = "weather";
 // Files to cache here.
 const FILES_TO_CACHE = [
