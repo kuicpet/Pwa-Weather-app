@@ -124,3 +124,6 @@ form.addEventListener("submit",(e) => {
 const year = document.createTextNode(new Date().getFullYear());
 copyright.appendChild(year);
 
+window.onload = function() {
+    localStorage.getItem("data", JSON.parse(data));
+}
