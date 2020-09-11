@@ -24,7 +24,7 @@
                 <div class="container">
                     <form class="form">
                         <div class="searchCity">
-                            <label for="searchCity"></label>
+                            <label for="searchCity">Search City Weather</label>
                             <input type="text" class="searchInput" id="searchCity" placeholder="Search City" autofocus/>
                         </div>
                         <div class="msg"></div>
@@ -40,7 +40,11 @@
                    
                     <ul class="cities"></ul>
                 </div>
+                <div class="container">
+                    <button id="butInstall">Add</button>
+                </div>
             </section>
+            
         </main>
         <footer class="footer">
             <small>&copy;<span id="copyright"></span> | Kingsley Umujeyan</small>
@@ -58,14 +62,5 @@
                 });
             }
         </script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="/__/firebase/7.20.0/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-             https://firebase.google.com/docs/web/setup#available-libraries -->
-        
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js"></script>
-        
     </body>
 </html>

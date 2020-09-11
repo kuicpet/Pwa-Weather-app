@@ -1,8 +1,13 @@
-// Register Service Worker
-
+const CACHE_NAME = "weather";
 // Files to cache here.
 const FILES_TO_CACHE = [
+    "/",
     "/offline.html",
+    "/index.html",
+    "/css/style.css",
+    "/script.js",
+    "/clock.js",
+    "/install.js",
 ];
 
 // Precache static resources

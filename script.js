@@ -80,8 +80,6 @@ form.addEventListener("submit",(e) => {
     .then(response => response.json())
     .then(data => {
         const {main, name, sys, weather, wind } = data;
-        // Saving to localstorage
-        localStorage.setItem("data", JSON.stringify(data));
         const icon = `http://openweathermap.org/img/w/${weather[0]["icon"]}.png`;
         //console.log(data);
         const li = document.createElement("li");
