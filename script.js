@@ -30,7 +30,7 @@ function showLoader() {
     loader.className = "show";
     setTimeout(() => {
         loader.className = loader.className.replace("show", "");
-    }, 1500);
+    }, 3000);
 }
 
 // Search
