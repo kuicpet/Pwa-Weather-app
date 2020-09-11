@@ -111,8 +111,8 @@ h1 {
     width: 100%;
 }
 .city {
-    background-color: #0000002e;
-    opacity: 0.9;
+    background-color: #000000;
+    opacity: 0.65;
     width: 25rem;
     max-width: 100%;
     border-radius: 1rem;
