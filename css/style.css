@@ -17,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/collection/1408037/1600x900') no-repeat center / cover;
+    background: url('https://source.unsplash.com/collection/1408037/1600x900') no-repeat center / cover;
 }
 main {
     flex: 1 0 auto;
@@ -89,8 +89,7 @@ h1 {
 }
 .btn:hover {
     background-color: black;
-}
-/**
+}/**
 .cities {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -111,7 +110,7 @@ h1 {
     width: 100%;
 }
 .city {
-    background-color: #000000;
+    background-color: #0000002e;
     opacity: 0.65;
     width: 25rem;
     max-width: 100%;
