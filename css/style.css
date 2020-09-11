@@ -104,7 +104,6 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    flex: 1 0 25%;
     list-style: none;
     text-align: center;
     padding: 2rem;
@@ -114,9 +113,9 @@ h1 {
     background-color: #0000002e;
     opacity: 0.9;
     width: 25rem;
-    max-width: 70%;
+    max-width: 90%;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 0.1rem;
     margin: 0.2rem;
 }
 .city-name {
