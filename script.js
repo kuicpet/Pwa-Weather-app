@@ -31,7 +31,7 @@ function showLoader() {
     loader.className = "show";
     setTimeout(() => {
         loader.className = loader.className.replace("show", "");
-    }, 3000);
+    }, 5000);
 }
 
 // Search
@@ -120,6 +120,50 @@ form.addEventListener("submit",(e) => {
    
 });
 
+showLoader();
+
+const getLocalWeather = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            const weather = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,minutely&appid=${apikey}&units=metric`;
+            fetch(weather)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const { current } = data;
+                const icon = `http://openweathermap.org/img/w/${current.weather[0]["icon"]}.png`;
+                const li = document.createElement("li");
+                li.classList.add("city");
+                const markup = `
+                    <h2 class="city-name" >
+                        <span>${data.timezone}</span>
+                    </h2>
+                    <div class="city-temp">
+                        <p class="temp">${Math.round(current.temp)}<sup>°C</sup></p>
+                        <span>Feels like: ${current.feels_like}<sup>°C</sup></span>
+                    </div>
+                    <figure class="fig">
+                        <img class="city-icon" 
+                            src=${icon}
+                            alt=${current.weather[0]["description"]}
+                            />
+                        <figcaption>
+                            ${current.weather[0]["description"]}
+                        </figcaption>
+                    </figure>
+                    <div class="wind">
+                        <p>Wind Speed: ${current.wind_speed} m/s</p>
+                    </div>
+                `;
+                li.innerHTML = markup;
+                list.appendChild(li);
+            })
+        })
+    }
+}
+getLocalWeather();
 // Footer
 const year = document.createTextNode(new Date().getFullYear());
 copyright.appendChild(year);
