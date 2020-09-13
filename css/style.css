@@ -117,7 +117,10 @@ h1 {
     font-size: 4rem;
     margin: 0;
 }
-/**Sinner*/
+.wind span {
+    padding: 1px;
+}
+/**Spinner*/
 #loader {
     visibility: hidden;
     width: 2rem;

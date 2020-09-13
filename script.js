@@ -155,6 +155,8 @@ const getLocalWeather = () => {
                     </figure>
                     <div class="wind">
                         <p>Wind Speed: ${current.wind_speed} m/s</p>
+                        <span><b>Humidity:</b> ${current.humidity} %</span>
+                        <span><b>Pressure:</b> ${current.pressure} hPa</span>
                     </div>
                 `;
                 li.innerHTML = markup;
