@@ -31,7 +31,7 @@ function showLoader() {
     loader.className = "show";
     setTimeout(() => {
         loader.className = loader.className.replace("show", "");
-    }, 5000);
+    }, 3000);
 }
 
 // Search
@@ -81,7 +81,7 @@ form.addEventListener("submit",(e) => {
     .then(response => response.json())
     .then(data => {
         const {main, name, sys, weather, wind } = data;
-        localStorage.setItem("data", JSON.stringify(data));
+        // localStorage.setItem("data", JSON.stringify(data));
         const icon = `http://openweathermap.org/img/w/${weather[0]["icon"]}.png`;
         console.log(data);
         const li = document.createElement("li");
@@ -112,6 +112,7 @@ form.addEventListener("submit",(e) => {
         `;
         li.innerHTML = markup;
         list.appendChild(li);
+        saveData(data);
     })
     .catch(() => {
         msg.textContent = "Please search a valid city name!";
@@ -163,11 +164,20 @@ const getLocalWeather = () => {
                 `;
                 li.innerHTML = markup;
                 list.appendChild(li);
+                saveData(data);
             })
         })
     }
 }
 getLocalWeather();
+
+function saveData(list) {
+    const data = JSON.stringify(list);
+    localStorage.setItem("List", data);
+}
+
 // Footer
 const year = document.createTextNode(new Date().getFullYear());
 copyright.appendChild(year);
+
+
