@@ -111,7 +111,7 @@ form.addEventListener("submit",(e) => {
             </div>
         `;
         li.innerHTML = markup;
-        list.appendChild(li);
+        list.prepend(li);
         saveData(data);
     })
     .catch(() => {
