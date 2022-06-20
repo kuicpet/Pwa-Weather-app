@@ -50,18 +50,20 @@ h1 {
     margin: 0;
 }
 .form{
+    width: 100%;
     margin-top: 1rem;
     align-items: center;
     justify-content: center;
     padding: 2rem 0;
 }
 .searchCity {
-    width: 100%;
+    width: 30%;
     margin: 0 auto;
     padding: 0;
 }
 .searchInput {
     width: 100%;
+    height: 2.5rem;
     color: #fff;
     font-weight: normal;
     margin: 0 auto;
@@ -74,21 +76,30 @@ h1 {
     color: #fff;
     opacity: 0.9;
 }
+.searchInput:focus {
+    outline: none;
+}
 .submit {
     text-align: center;
     padding: 0.5rem;
 }
 .btn {
-    width: 60%;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 3rem;
+    font-size: 1.2rem;
     border: none;
     outline: none;
     border-radius: 3.125rem;
     background-color: black;
     color: #fff;
     padding: 0.6rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
 }
 .btn:hover {
-    background-color: black;
+    background-color: rgb(4, 4, 41);
 }
 /*.cities {
     display: flex;
@@ -177,6 +188,10 @@ h1 {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 1rem;
     }
+    .btn, .searchCity {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 @media only screen and (min-width: 601px){
     .cities {
@@ -187,6 +202,7 @@ h1 {
     .cities {
         grid-template-columns: auto auto auto;
     }
+    
 }
 @media only screen and (min-width: 992px){
     .cities {
